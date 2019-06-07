@@ -12,7 +12,6 @@
     <title>MG PowerPoint page</title>
   </head>
   <body>
-    
       <nav class="navbar navbar-expand-lg navbar-light border-bottom pl-3" style="height:60px; background-color: #e3f2fd;" >
           <a class="navbar-brand" href="index.html">
               <img src="./img/logo.png" height="30" alt="">
@@ -34,7 +33,7 @@
             </li>
           </ul>
           
-          <button type="button" class="btn btn-outline-primary mr-3">
+          <button type="button" class="btn btn-outline-primary mr-3"   data-toggle="tooltip" data-placement="bottom" title="此按钮仅在开发版本中才有">
             <a href="./index.html" style="text-decoration:none;">切换至学生模式</a>
           </button> 
           <span class="mr-1">
@@ -151,18 +150,32 @@
                 <br>
                 <p>PPT放映模式：</p>
                 <div>
-                    <button type="button" class="btn btn-primary">同步模式</button>
-                    <button type="button" class="btn btn-warning">里程碑模式</button>
-                    <button type="button" class="btn btn-secondary">释放模式</button>
-                    <button type="button" class="btn btn-info">自由模式</button>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="学生ppt被老师操控，无法自主翻页">
+                      同步模式
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="学生只有权限看老师展示过的页面">
+                      释放模式
+                    </button>
+                    <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="老师按照进度条，开放一个阶段的所有ppt，学生可在此范围内随意浏览" >
+                      里程碑模式
+                    </button>
+                    <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="学生可自由浏览所有页面">
+                      自由模式
+                    </button>
                 </div>
                 <div>
                 <br>
                 <p>操作:</p>
                 <div>
-                    <button type="button" class="btn btn-danger">上课</button>
-                    <button type="button" class="btn btn-success">下课</button>
-                    <button type="button" class="btn btn-dark">黑屏</button>
+                    <button type="button" class="btn btn-danger"  data-toggle="tooltip" data-placement="top" title="点击按钮后，上课计时开始，进度条开始走">
+                      上课
+                    </button>
+                    <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="点击下课后，结束本次课程，本节课也会加入到参与学生的已学过列表当中">
+                      下课
+                    </button>
+                    <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="所有学生ppt变黑，注意力集中在老师身上">
+                      黑屏
+                    </button>
                 </div>
             </div>
           </div>
@@ -184,5 +197,6 @@
     <script src="js/jquery.js" ></script>
     <script src="js/popper.js" ></script>
     <script src="js/bootstrap/dist/js/bootstrap.js" ></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
