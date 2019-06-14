@@ -1,2 +1,2 @@
 # mg_ppt_web_app
-![story board](./img/story_board.png)
+![story board](./story_board.png)
