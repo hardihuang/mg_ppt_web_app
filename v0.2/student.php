@@ -14,7 +14,7 @@ require_once 'includes/header.php';
 
 		<div class="col-4 float-right">
 			<?php require_once 'includes/modal.php' ?>
-			<?php require_once 'includes/leader-board.php'?>
+			<?php require_once 'includes/leader-board.php' ?>
 		</div><!--end of col-4 -->
 
 	</div><!--end of row-->

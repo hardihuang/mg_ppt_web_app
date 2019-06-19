@@ -10,7 +10,7 @@ require_once './include.php';
 	<meta name="keywords" content="">
 	<meta http-equiv="x-ua-compatible" content="ie=7" />
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-	<title>MG-web-app</title>
+	<title>MG—<?php echo $pageTitle; ?></title>
 	<link rel="stylesheet" href="styles/style.css">
 	<link rel="stylesheet" href="styles/bootstrap.css">
 	<script src="scripts/jquery.js"></script>
@@ -23,6 +23,7 @@ require_once './include.php';
       <a class="navbar-brand" href="./index.html">
         <img src="./images/logo.png" height="30" alt="">
       </a>
+      <a class="navbar-brand" href="#">在线课程系统 v<?php echo $currentVersion; ?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

@@ -9,6 +9,7 @@ function connect(){
 	mysql_select_db(DB_DBNAME) or die("指定数据库打开失败");
 	return $link;
 }
+
 /**
  * 完成记录插入的操作
  * @param string $table
@@ -22,6 +23,8 @@ function insert($table,$array){
 	mysql_query($sql);
 	return mysql_insert_id();
 }
+
+
 /**
  *	删除记录
  * @param string $table
@@ -34,6 +37,7 @@ function delete($table,$where=null){
 	mysql_query($sql);
 	return mysql_affected_rows();
 }
+
 /**
  * 记录的更新操作
  * @param string $table
@@ -60,6 +64,7 @@ function update($table,$array,$where=null){
 			return false;
 		}
 }
+
 /**
  *得到指定一条记录
  * @param string $sql
@@ -71,6 +76,7 @@ function fetchOne($sql,$result_type=MYSQL_ASSOC){
 	$row=mysql_fetch_array($result,$result_type);
 	return $row;
 }
+
 /**
  * 得到结果集中所有记录 ...
  * @param string $sql
@@ -84,6 +90,7 @@ function fetchAll($sql,$result_type=MYSQL_ASSOC){
 	};
 	return @$rows;
 }
+
 /**
  * 得到上一步插入记录的ID号
  * @return number
@@ -91,6 +98,7 @@ function fetchAll($sql,$result_type=MYSQL_ASSOC){
 function getInsertId(){
 	return mysql_insert_id();
 }
+
 /**
  * 得到结果集中的记录条数
  * @param unknown_type $sql
