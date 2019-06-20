@@ -1,5 +1,10 @@
 <?php
 require_once './include.php';
+
+checkLogin();
+$avatar=getUserByUid($_SESSION['uid'])['avatar'];
+$uid=$_SESSION['uid'];
+
 ?>
 <!DOCTYPE HTML>
 
@@ -19,8 +24,8 @@ require_once './include.php';
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-light border-bottom pl-3" style="height:60px;">
-      <a class="navbar-brand" href="./index.html">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom pl-3" style="height:60px;">
+      <a class="navbar-brand" href="./courseList.php">
         <img src="./images/logo.png" height="30" alt="">
       </a>
       <a class="navbar-brand" href="#">在线课程系统 v<?php echo $currentVersion; ?></a>
@@ -38,16 +43,15 @@ require_once './include.php';
           <li class="nav-item">
             <a class="nav-link" href="#">创想</a>
           </li>
-          <li>
-            fetch data area:
-            <p id="fetchData"></p>
-          </li>
         </ul>
-        <button type="button" class="btn btn-outline-primary mr-3"  data-toggle="tooltip" data-placement="bottom" title="测试按钮">
-          <a href="./admin.html" style="text-decoration:none;">xxx</a>
+        <button type="button" class="btn btn-outline-primary mr-3">
+          <a href="doAction.php?act=logout" style="text-decoration:none;">退出</a>
         </button> 
         <span class="mr-1">
-          <img  src="./images/avatar/harry.png" alt="..." style="width:60px; border-style:solid; border-width:medium;" class="rounded-circle mr-3 border-secondary" >哈利·波特  
+          <?php 
+            echo('<img  src="./images/uploads/avatar_50/'.$avatar.'" alt="..." style="width:50px; border-style:solid; border-width:medium;" class="rounded-circle mr-3 border-secondary" >'.$_SESSION['name'])
+           ?>
+          
         </span>
       </div>
     </nav>

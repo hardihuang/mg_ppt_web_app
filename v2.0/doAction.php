@@ -7,8 +7,8 @@ if($act==='signup'){
 	$msg=login();
 }elseif($act==='logout'){
 	$msg=logout();
-}elseif($act==='post'){
-	$msg=post();
+}elseif($act==='addCourse'){
+	$msg=addCourse();
 }elseif($act==='deletePost'){
 	$msg=deletePost();
 }elseif($act==='likePost'){
@@ -38,7 +38,8 @@ if($act==='signup'){
  <body>
  <?php 
 if(@$msg){
-	echo $msg;
+	//echo $msg;
+	print_r($msg);
 }
 ?>
  </body>

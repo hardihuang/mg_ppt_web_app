@@ -16,4 +16,5 @@ require_once 'timeFormate.class.php';
 
 
 require_once 'user.inc.php';
+require_once 'course.inc.php';
 connect();

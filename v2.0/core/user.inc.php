@@ -38,7 +38,7 @@ function login(){
 		$_SESSION['name']=$row['name'];
 		setcookie('uid',$row['uid'],time()+3600*24*7);
 		setcookie('name',$row['name'],time()+3600*24*7);
-		$mes="嗨 ".$_SESSION['name']." ,欢迎回来！<br/><meta http-equiv='refresh' content='1;url=user.php'/>";
+		$mes="嗨 ".$_SESSION['name']." ,欢迎回来！<br/><meta http-equiv='refresh' content='1;url=courseList.php'/>";
 		// $mes="嗨 ".$_SESSION['name']." ,欢迎回来！";
 	}else{
 		$mes="╮(╯_╰)╭ &nbsp;&nbsp;登陆失败！<meta http-equiv='refresh' content='1;url=login.php'/>";
@@ -276,7 +276,7 @@ function deleteUser(){
 }
 
 function getUserByUid($uid){
-	$sql="select * from zhx_user where uid=$uid";
+	$sql="select * from mg_user where uid=$uid";
 	$row=fetchOne($sql);
 	return $row;
 }
