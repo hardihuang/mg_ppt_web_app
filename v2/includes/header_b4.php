@@ -16,14 +16,16 @@ require_once './include.php';
 	<script src="scripts/jquery.js"></script>
 	<script src="scripts/popper.js"></script>
 	<script src="scripts/bootstrap.bundle.js"></script>
+	<script src="scripts/script.js"></script>
 </head>
 <body>
 	
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <a class="navbar-brand" href="./index.html">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+	  <a class="navbar-brand" href="./index.php">
         <img src="./images/logo.png" height="30" alt="">
       </a>
-	  <a class="navbar-brand" href="#">在线课程系统 v<?php echo $currentVersion; ?></a>
+	  <a class="navbar-brand mr-1"  href="index.php">在线课程系统 v<?php echo $currentVersion; ?></a>
+      <span class="badge badge-warning mr-3">Beta</span>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>

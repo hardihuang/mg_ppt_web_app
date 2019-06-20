@@ -19,3 +19,11 @@ CREATE TABLE `mg_course` (
 ) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 ALTER TABLE  mg_course ADD content INT NOT NULL；
+
+CREATE TABLE `mg_version` (
+  `vid` int(11) NOT NULL AUTO_INCREMENT,
+  `version` varchar(30) NOT NULL,
+  `dateTime` datetime NOT NULL,
+  `content` varchar(64) NOT NULL,
+  PRIMARY KEY (`vid`)
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;

@@ -21,6 +21,7 @@ $uid=$_SESSION['uid'];
 	<script src="scripts/jquery.js"></script>
 	<script src="scripts/popper.js"></script>
 	<script src="scripts/bootstrap.bundle.js"></script>
+  <script src="scripts/script.js"></script>
 </head>
 <body>
 
@@ -28,7 +29,8 @@ $uid=$_SESSION['uid'];
       <a class="navbar-brand" href="./courseList.php">
         <img src="./images/logo.png" height="30" alt="">
       </a>
-      <a class="navbar-brand" href="#">在线课程系统 v<?php echo $currentVersion; ?></a>
+      <a class="navbar-brand mr-1"  href="courseList.php">在线课程系统 v<?php echo $currentVersion; ?></a>
+      <span class="badge badge-warning mr-3">Beta</span>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -44,15 +46,15 @@ $uid=$_SESSION['uid'];
             <a class="nav-link" href="#">创想</a>
           </li>
         </ul>
-        <button type="button" class="btn btn-outline-primary mr-3">
-          <a href="doAction.php?act=logout" style="text-decoration:none;">退出</a>
-        </button> 
+        
         <span class="mr-1">
           <?php 
-            echo('<img  src="./images/uploads/avatar_50/'.$avatar.'" alt="..." style="width:50px; border-style:solid; border-width:medium;" class="rounded-circle mr-3 border-secondary" >'.$_SESSION['name'])
+            echo('<img  src="./images/uploads/avatar_50/'.$avatar.'" alt="..." style="width:50px; border-style:solid; border-width:medium;border-color:#e6e6e6" class="rounded-circle mr-3 " >'.$_SESSION['name'])
            ?>
-          
         </span>
+        <button type="button" class="btn btn-outline-primary ml-2">
+          <a href="doAction.php?act=logout" style="text-decoration:none;">退出</a>
+        </button> 
       </div>
     </nav>
 	
