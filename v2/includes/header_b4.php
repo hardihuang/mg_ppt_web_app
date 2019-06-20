@@ -1,5 +1,6 @@
 <?php
 require_once './include.php';
+$version = getCurrentVersion()['version'];
 ?>
 <!DOCTYPE HTML>
 
@@ -24,11 +25,9 @@ require_once './include.php';
 	  <a class="navbar-brand" href="./index.php">
         <img src="./images/logo.png" height="30" alt="">
       </a>
-	  <a class="navbar-brand mr-1"  href="index.php">在线课程系统 v<?php echo $currentVersion; ?></a>
+	  <a class="navbar-brand mr-2"  href="index.php">在线课程系统 </a>
+      <a class="navbar-brand mr-2" href="index.php">v<?php echo $version; ?></a>
       <span class="badge badge-warning mr-3">Beta</span>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
 
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent" >
 	    <ul class="navbar-nav mr-auto ">

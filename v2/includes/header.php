@@ -4,7 +4,7 @@ require_once './include.php';
 checkLogin();
 $avatar=getUserByUid($_SESSION['uid'])['avatar'];
 $uid=$_SESSION['uid'];
-
+$version = getCurrentVersion()['version'];
 ?>
 <!DOCTYPE HTML>
 
@@ -25,15 +25,13 @@ $uid=$_SESSION['uid'];
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom pl-3" style="height:60px;">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom pl-3 shadow-sm" style="height:60px;">
       <a class="navbar-brand" href="./courseList.php">
         <img src="./images/logo.png" height="30" alt="">
       </a>
-      <a class="navbar-brand mr-1"  href="courseList.php">在线课程系统 v<?php echo $currentVersion; ?></a>
+      <a class="navbar-brand mr-2"  href="courseList.php">在线课程系统 </a>
+      <a class="navbar-brand mr-2" href="./version.php" data-toggle="tooltip" data-placement="bottom" title="查看版本更新记录">v<?php echo $version; ?></a>
       <span class="badge badge-warning mr-3">Beta</span>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
       <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0 font-weight-bolder">
           <li class="nav-item ">
