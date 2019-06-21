@@ -9,8 +9,8 @@ if($act==='signup'){
 	$msg=logout();
 }elseif($act==='addCourse'){
 	$msg=addCourse();
-}elseif($act==='deletePost'){
-	$msg=deletePost();
+}elseif($act==='newVersion'){
+	$msg=newVersion();
 }elseif($act==='likePost'){
 	$msg=likePost();
 }elseif($act==='commentPost'){
