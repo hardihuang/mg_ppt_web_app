@@ -4,7 +4,7 @@ require_once 'includes/header.php';
 $rows = getAllCourses();
 $user = getUserByUid($uid);
 
-echo('<div class="container mt-3 " >');
+echo('<div class="container" >');
 	if(!empty($rows)){
 		foreach($rows as $row){
 			if($user['isAdmin'] == 1){

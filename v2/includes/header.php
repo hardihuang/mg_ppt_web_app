@@ -25,7 +25,7 @@ $version = getCurrentVersion()['version'];
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom pl-3 shadow-sm" style="height:60px;">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom pl-3 shadow-sm fixed-top" style="height:60px;">
       <a class="navbar-brand" href="./courseList.php">
         <img src="./images/logo.png" height="30" alt="">
       </a>
@@ -55,4 +55,5 @@ $version = getCurrentVersion()['version'];
         </button> 
       </div>
     </nav>
+    <div class="navSpacer" style="height:70px"> </div>
 	
