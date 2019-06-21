@@ -26,3 +26,11 @@
 require_once 'includes/footer.php';
  ?>
 
+<!--
+待添加新功能：
+
+·添加ppt上传功能，一键上传所有ppt页面
+·支持图片拖拽排序
+
+
+-->

@@ -30,12 +30,14 @@ function buildInfo(){
 }
 
 
-function uploadFile($path="images/uploads/",$allowExt=array("gif","jpeg","png","jpg","wbmp"),$maxSize=2097152,$imgFlag=true){
+function uploadFile($path="images/uploads/",$allowExt=array("gif","jpeg","png","jpg","wbmp"),$maxSize=2097152,$imgFlag=true,$UniName=true){
 	if(!file_exists($path)){
 		mkdir($path,0777,true);
 	}
+	
 	$i=0;
 	$files=buildInfo();
+
 	if(!($files&&is_array($files))){
 		return ;
 	}
@@ -59,8 +61,17 @@ function uploadFile($path="images/uploads/",$allowExt=array("gif","jpeg","png","
 			if(!is_uploaded_file($file['tmp_name'])){
 				exit("上传图片为不是通过HTTP POST方式上传上来的");
 			}
-			$filename=getUniName().".".$ext;
+			if($UniName){
+				$filename=getUniName().".".$ext;
+			}else{
+				$filename=mb_convert_encoding($file['name'],'GBK','UTF-8');
+				//$filename=$file['name'];
+			}
+			
 			$destination=$path."/".$filename;
+			//return($file['tmp_name']);
+			//return($destination);
+			//return move_uploaded_file($file['tmp_name'], $destination);
 			if(move_uploaded_file($file['tmp_name'], $destination)){
 				$file['name']=$filename;
 				unset($file['tmp_name'],$file['size'],$file['type']);
@@ -95,4 +106,40 @@ function uploadFile($path="images/uploads/",$allowExt=array("gif","jpeg","png","
 			}
 	}
 	return @$uploadedFiles;
+}
+
+function sortImgByFilename($dir){
+$fileList = array();
+	if (is_dir($dir)) {
+	    if ($dh = opendir($dir)) {
+	    	
+	        while (($file = readdir($dh)) !== false) {
+	        	if ($file != "." && $file != "..") {
+	            	$fileList[]=mb_convert_encoding(getFileName($file),'UTF-8','GBK');
+	        	}
+	        }
+	        closedir($dh);
+	    }
+	}
+
+    $names = array();
+    for($i=0; $i<count($fileList); $i++) {
+        preg_match('/^(.+?)(\d+)$/', $fileList[$i], $matches);
+        $names[] = array($matches[1], $matches[2]);
+    }
+
+    $name = array();
+    $number = array();
+    foreach ($names as $key => $row) {
+        $name[$key]  = $row[0];
+        $number[$key] = $row[1];
+    }
+
+    array_multisort($name, SORT_ASC, $number, SORT_NUMERIC, $names);
+    $output = array();
+    foreach ($names as $row) {
+        $output[] = $row[0] . $row[1];
+    }
+    
+    return $output;
 }

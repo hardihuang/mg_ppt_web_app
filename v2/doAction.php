@@ -38,8 +38,8 @@ if($act==='signup'){
  <body>
  <?php 
 if(@$msg){
-	echo $msg;
-	//print_r($msg);
+	//echo $msg;
+	print_r($msg);
 }
 ?>
  </body>

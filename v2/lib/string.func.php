@@ -37,6 +37,18 @@ function getUniName(){
 function getExt($filename){
 	return strtolower(end(explode(".",$filename)));
 }
+
+/**
+ * 去除文件扩展名
+ * @param string $filename
+ * @return string
+ */
+function getFileName($filename){
+	return explode(".",$filename)[0];
+}
+
+
+
  
  
 function alertMsg($msg,$url){
