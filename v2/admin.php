@@ -3,20 +3,21 @@ $pageTitle="老师端-PPT页面";
 require_once 'includes/header.php';
 ?>
 
+
 <div class="container-fluid">
 	<div class="row">
 
 		<div class="p-3 col-8  float-left" >
-			<div id="carouselExampleControls" class="carousel slide carousel-fade border " data-interval="false" data-ride="carousel">
+			<div id="ppt_main" class="carousel slide carousel-fade border " data-interval="false" data-ride="carousel">
 				<?php require 'includes/carousel-inner.php' ?>
-			</div><!--end of carouselExampleControls-->
+			</div><!--end of ppt_main-->
 		</div><!--end of p3 col-8-->
 
 		<div class="col-4 float-right">
 			<div class="card mb-3 mt-3">
 	            <div class="card-header font-weight-bolder">下一张幻灯片 Next Slide</div>
 	            <div class="card-body">
-	                <div id="carouselNextSlide" class="carousel slide" data-interval="false"  data-ride="carousel">
+	                <div id="ppt_preview" class="carousel slide" data-interval="false"  data-ride="carousel">
 	                	<?php require 'includes/carousel-inner.php' ?>
 	                </div>
 	            </div><!--end of card-body-->
@@ -28,6 +29,8 @@ require_once 'includes/header.php';
 	</div><!--end of row-->
 
 </div><!--end of container-fluid-->
+
+<script type="text/javascript" src="scripts/admin.js"></script>
 
 <?php 
 require_once 'includes/progress-bar.php';

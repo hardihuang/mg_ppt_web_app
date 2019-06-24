@@ -1,6 +1,7 @@
 <?php 
 require_once 'include.php';
 $act=$_REQUEST['act'];
+
 if($act==='signup'){
 	$msg=signup();
 }elseif($act==='login'){
@@ -11,8 +12,8 @@ if($act==='signup'){
 	$msg=addCourse();
 }elseif($act==='newVersion'){
 	$msg=newVersion();
-}elseif($act==='likePost'){
-	$msg=likePost();
+}elseif($act==='newClass'){
+	$msg=newClass($_REQUEST['uid']);
 }elseif($act==='commentPost'){
 	$msg=commentPost();
 }elseif($act==='deleteComment'){

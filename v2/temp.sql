@@ -52,3 +52,18 @@ insert into mg_version(version,dateTime,content) values('2.6.2','2019-06-21 10:3
 insert into mg_version(version,dateTime,content) values('2.6.3','2019-06-21 17:54:00','实现老师一键上传ppt所有页面功能，并兼容中文字符文件名，还可根据文件名中数字自动排序');
 insert into mg_version(version,dateTime,content) values('2.6.4','2019-06-21 18:13:00','添加了前端增加版本更新的信息表格提交功能');
 
+
+CREATE TABLE `mg_class` (
+  `aid` int(11) NOT NULL, //admin id
+  `cid` int(11) NOT NULL,
+  `page` int(11) NOT NULL,
+  `mode` int(11) NOT NULL,
+  PRIMARY KEY (`aid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `mg_student` (
+  `uid` int(11) NOT NULL,
+  `aid` int(11) NOT NULL,
+  `points` int(11) NOT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;

@@ -7,25 +7,29 @@ $user = getUserByUid($uid);
 echo('<div class="container" >');
 	if(!empty($rows)){
 		foreach($rows as $row){
+			$btn1="";
 			if($user['isAdmin'] == 1){
-				$courseLink = 'admin.php?cid='.$row['cid'];
-			}else{
-				$courseLink = 'student.php?cid='.$row['cid'];
-			} 
+				$btnLink = 'doAction.php?act=newClass&cid='.$row['cid'].'&uid='.$uid;
+				$btn1 = '<a href="'.$btnLink.'" class="btn btn-primary float-right">开课</a>';
+			}
+
+			$courseLink = 'courseInfo.php?cid='.$row['cid'];
+			$btn2 = '<a href="courseInfo.php?cid='.$row['cid'].'" class="btn btn-success float-left">课程详情</a>';
+			
 			echo('<div class="card float-left mx-2 my-2 " style="width: 16rem;">');
 			echo('<img src="images/course/'.$row['slides'].'/'.$row['thumbnail'].'"  style="height:190px;" class="card-img-top" alt="...">');
 			echo('
 					<div class="card-body">
 			    		<h5 class="card-title">'.$row['name'].'</h5>
 			    		<p class="card-text">'.$row['summary'].'</p>
-			    		<a href="'.$courseLink.'" class="btn btn-primary">去上课</a>
+			    		'.$btn1.$btn2.'
 			  		</div>
 		  		</div>
 
 		  		');
 		}	
 	}
-	
+
 echo('</div>');
  ?>
  

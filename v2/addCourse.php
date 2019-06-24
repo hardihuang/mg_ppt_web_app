@@ -21,7 +21,7 @@ if($user['isAdmin']!=1){
 		    <textarea class="form-control"  name="summary" id="summary" rows="3" placeholder="course summary"></textarea>
 		  </div>
 		  <div class="form-group col-md-6 float-left px-0 pt-2">
-		  	<label for="slides">课程PPT：<span style="font-size:12px">&nbsp;(请按照顺序命名图片)</span></label>
+		  	<label for="slides">课程PPT：<span style="font-size:12px">&nbsp;(请按照顺序命名图片)</span></label><a href="pptUploadHelp.php" class="ml-3">帮助</a>
     		<input type="file" class="form-control-file" id="slides" name="slides[]" accept="image/jpeg,image/gif,image/jpg,image/png" multiple>
 		  </div>
 		  <div class="form-group col-md-6 px-0 float-left">

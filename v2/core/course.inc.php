@@ -6,6 +6,22 @@ function getAllCourses(){
 	return $rows;
 }
 
+function getSlidesDir(){
+	$sql="select slides from mg_course where cid = ".$_GET['cid'];
+	$dir = fetchOne($sql);
+	return $dir;
+}
+
+function newClass($uid){
+	$arr['cid'] = $_GET['cid'];
+	$arr['aid'] = $uid;
+	$arr['page'] = 1;
+	$arr['mode'] = 1;
+	insert("mg_class", $arr);
+	$msg="正在为您新建课堂...<meta http-equiv='refresh' content='2;url=admin.php?cid=".$arr['cid']."'/>";
+	return $msg;
+}
+
 function addCourse(){
 	$arr=$_POST;
 	array_splice($arr, -1);//remove the last element of this arr which is [submit]
