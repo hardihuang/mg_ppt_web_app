@@ -3,8 +3,12 @@ $pageTitle="课程列表";
 require_once 'includes/header.php';
 $rows = getAllCourses();
 $user = getUserByUid($uid);
+$classes = getCurrentClass();
 
 echo('<div class="container" >');
+echo('<div class="row">
+    <div class="col-8">');
+
 	if(!empty($rows)){
 		foreach($rows as $row){
 			$btn1="";
@@ -16,8 +20,8 @@ echo('<div class="container" >');
 			$courseLink = 'courseInfo.php?cid='.$row['cid'];
 			$btn2 = '<a href="courseInfo.php?cid='.$row['cid'].'" class="btn btn-success float-left">课程详情</a>';
 			
-			echo('<div class="card float-left mx-2 my-2 " style="width: 16rem;">');
-			echo('<img src="images/course/'.$row['slides'].'/'.$row['thumbnail'].'"  style="height:190px;" class="card-img-top" alt="...">');
+			echo('<div class="card float-left mx-2 my-2 " style="width: 14rem;">');
+			echo('<img src="images/course/'.$row['slides'].'/'.$row['thumbnail'].'"  style="height:160px;" class="card-img-top" alt="...">');
 			echo('
 					<div class="card-body">
 			    		<h5 class="card-title">'.$row['name'].'</h5>
@@ -29,8 +33,23 @@ echo('<div class="container" >');
 		  		');
 		}	
 	}
+		echo('</div><!--end of col-8-->');
+			echo('<div class="card" style="width: 18rem;">
+				  <div class="card-header">
+				    当前课堂：
+				  </div>
+				  <ul class="list-group list-group-flush">');
+				foreach ($classes as $class) {
+					echo('<li class="list-group-item">'.$class['course_name'].'  '.$class['admin_name'].'</li>');
+				}
+				    
+				  echo('</ul>
+				</div>');
+		echo('<div class="col-4">');
 
-echo('</div>');
+		echo('</div><!--end of col-4-->');
+	echo('</div><!--end of the row-->');
+echo('</div><!--end of container-->');
  ?>
  
 
@@ -47,11 +66,7 @@ if($user['isAdmin'] == 1){
 		);
 }
 
-
-
-
 ?>
-
 
 
 <?php 

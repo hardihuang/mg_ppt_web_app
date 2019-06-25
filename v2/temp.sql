@@ -67,3 +67,5 @@ CREATE TABLE `mg_student` (
   `points` int(11) NOT NULL,
   PRIMARY KEY (`uid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+select mg_class.aid, mg_class.cid, mg_user.name as admin_name, mg_course.name as course_name from mg_class left join mg_user on mg_class.aid=mg_user.uid left join mg_course on mg_class.cid=mg_course.cid;

@@ -12,11 +12,22 @@ function getSlidesDir(){
 	return $dir;
 }
 
+function getCurrentClass(){
+	$sql="select mg_class.aid, mg_class.cid, mg_user.name as admin_name, mg_course.name as course_name from mg_class left join mg_user on mg_class.aid=mg_user.uid left join mg_course on mg_class.cid=mg_course.cid";
+	$rows = fetchAll($sql);
+	return $rows;
+}
+
 function newClass($uid){
 	$arr['cid'] = $_GET['cid'];
 	$arr['aid'] = $uid;
 	$arr['page'] = 1;
 	$arr['mode'] = 1;
+
+	$sql="select * from mg_class where aid =".$arr['aid'];//check if there is already a class for this teacher
+	if(!empty(fetchOne($sql))){
+		delete('mg_class','aid ='.$arr['aid']);
+	}
 	insert("mg_class", $arr);
 	$msg="正在为您新建课堂...<meta http-equiv='refresh' content='2;url=admin.php?cid=".$arr['cid']."'/>";
 	return $msg;
