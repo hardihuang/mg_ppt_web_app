@@ -5,7 +5,7 @@ require_once 'includes/header.php';
 
 <div class="container-fluid">
 	<div class="row">
-
+	<div id="fetchData"></div>
 		<div class="p-3 col-8  float-left" >
 			<div id="ppt_main" class="carousel slide carousel-fade border " data-interval="false" data-ride="carousel">
 				<?php require_once 'includes/carousel-inner.php' ?>
@@ -20,7 +20,7 @@ require_once 'includes/header.php';
 	</div><!--end of row-->
 
 </div><!--end of container-fluid-->
-
+<script type="text/javascript" src="scripts/student.js"></script>
 <?php 
 require_once 'includes/progress-bar.php';
 require_once 'includes/footer.php'

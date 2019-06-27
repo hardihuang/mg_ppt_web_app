@@ -3,7 +3,6 @@ $pageTitle="老师端-PPT页面";
 require_once 'includes/header.php';
 ?>
 
-
 <div class="container-fluid">
 	<div class="row">
 
@@ -31,7 +30,9 @@ require_once 'includes/header.php';
 </div><!--end of container-fluid-->
 
 <script type="text/javascript" src="scripts/admin.js"></script>
-
+<script type="text/javascript">
+	
+</script>
 <?php 
 require_once 'includes/progress-bar.php';
 require_once 'includes/footer.php'

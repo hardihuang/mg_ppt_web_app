@@ -1,8 +1,22 @@
 <div class="card mb-3">
   <div class="card-header font-weight-bolder">控制 Control</div>
   <div class="card-body" style="padding-top: 10px; padding-bottom: 10px; padding-left: 10px;">
-      <br>
-      <p>PPT放映模式：</p>
+      
+      <div>
+        
+        <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="学生ppt被老师操控，无法自主翻页">
+            同步模式
+        </button>
+        <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="学生可自由浏览所有页面">
+            自由模式
+        </button>
+        <a type="button" href="doAction.php?act=closeClass" class="btn btn-success float-right" data-toggle="tooltip" data-placement="top" title="点击下课后，结束本次课程">
+            下课
+        </a> 
+
+
+      </div>
+      <!--
       <div>
           <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="学生ppt被老师操控，无法自主翻页">
             同步模式
@@ -34,6 +48,7 @@
             小测试
           </button>
       </div>
+      -->
   </div>
 </div>
 </div>

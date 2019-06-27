@@ -26,7 +26,7 @@ echo('<div class="row">
 					<div class="card-body">
 			    		<h5 class="card-title">'.$row['name'].'</h5>
 			    		<p class="card-text">'.$row['summary'].'</p>
-			    		'.$btn1.$btn2.'
+			    		'.$btn1.'
 			  		</div>
 		  		</div>
 
@@ -40,7 +40,12 @@ echo('<div class="row">
 				  </div>
 				  <ul class="list-group list-group-flush">');
 				foreach ($classes as $class) {
-					echo('<li class="list-group-item">'.$class['course_name'].'  '.$class['admin_name'].'</li>');
+					if($user['isAdmin'] == 1){
+						$button = '';
+					}else{
+						$button = '<a class="btn btn-primary btn-sm float-right" href="doAction.php?act=joinClass&aid='.$class['aid'].'&uid='.$uid.'&cid='.$class['cid'].'">去上课</a> ';
+					}
+					echo('<li class="list-group-item">'.$class['course_name'].' - '.$class['admin_name'].$button.'</li>');
 				}
 				    
 				  echo('</ul>

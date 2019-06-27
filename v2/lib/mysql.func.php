@@ -73,7 +73,11 @@ function update($table,$array,$where=null){
  */
 function fetchOne($sql,$result_type=MYSQL_ASSOC){
 	$result=mysql_query($sql);
-	$row=mysql_fetch_array($result,$result_type);
+	if(!empty($result)){
+		$row=mysql_fetch_array($result,$result_type);
+	}else{
+		$row = 0;
+	}
 	return $row;
 }
 

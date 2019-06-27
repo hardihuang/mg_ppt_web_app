@@ -1,6 +1,11 @@
 <?php 
+$pageTitle="doAction";
 require_once 'include.php';
 $act=$_REQUEST['act'];
+if($act != 'login' && $act != 'logout' && $act != 'signup'){
+	$uid=$_SESSION['uid'];
+}
+
 
 if($act==='signup'){
 	$msg=signup();
@@ -14,17 +19,19 @@ if($act==='signup'){
 	$msg=newVersion();
 }elseif($act==='newClass'){
 	$msg=newClass($_REQUEST['uid']);
-}elseif($act==='commentPost'){
-	$msg=commentPost();
-}elseif($act==='deleteComment'){
-	$msg=deleteComment();
-}elseif($act==='changeInfo'){
-	$msg=changeInfo();
-}elseif($act==='readNotify'){
-	$msg=readNotify();
+}elseif($act==='joinClass'){
+	$msg=joinClass($_REQUEST['uid'],$_REQUEST['aid'],$_REQUEST['cid']);
+}elseif($act==='updateClassData'){
+	$msg=updateClassData($uid);
+}elseif($act==='fetchClassData'){
+	$msg=fetchClassData($uid);
+}elseif($act==='closeClass'){
+	$msg=closeClass($uid);
 }elseif($act==='markAllRead'){
 	$msg=markAllRead();
 }
+
+
  ?>
  <!DOCTYPE HTML>
  <html>

@@ -10,24 +10,27 @@ $('#ppt_main').on('slid.bs.carousel', function() {
   $('.num').html(''+currentIndex+'/'+totalItems+'');
   $('#ppt_preview').carousel(currentIndex + 1);
 
-  //writeData();
+  writeData();
 });
 
 
 function writeData(){
-
+  //var temp = "doAction.php?act=updateClassData&aid="+ <?php echo($uid); ?>;
+  var aid = "<?php echo $uid; ?>";
     $.ajax({
         type: 'POST',
-        url: './apis/writeData.api.php',
+        url: "doAction.php?act=updateClassData",
         data: {
           currentPage:currentIndex,
-          somethingElse:"nothing"
+          aid: aid
         },
         success: function(data){
           console.log("success! "+currentIndex);
-          console.log(data);
-
-        }
+          //console.log(data);
+        },
+        error: function(returnval) {
+          console.log(returnVal);
+        },
     });
 
   }

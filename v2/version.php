@@ -54,8 +54,10 @@ require_once 'includes/footer.php';
 <!--
 待添加新功能：
 
-·添加ppt上传功能，一键上传所有ppt页面
 ·支持图片拖拽排序
-
+·admin页面点击下课后，自动清空mg_student表格中上此课的所有学生，以及mg_class中该课的条目
+·student.php 右下角排行榜更改为当前课堂学生
+·老师通过ajax控制页面
+·判断无课信息
 
 -->
