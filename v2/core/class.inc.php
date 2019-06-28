@@ -2,17 +2,24 @@
 
 function getCurrentClass(){
 	$sql="select mg_class.aid, mg_class.cid, mg_user.name as admin_name, mg_course.name as course_name from mg_class left join mg_user on mg_class.aid=mg_user.uid left join mg_course on mg_class.cid=mg_course.cid";
+	
+	$rows['data'] = fetchAll($sql);
+	$rows['uid']= $_SESSION['uid'];
+	$rows['isAdmin']=getUserByUid($rows['uid'])['isAdmin'];
+	return $rows;
+}
+
+function getClassStudents($uid){
+	$sql = "select aid from mg_student where uid=".$uid;
+	$row = fetchOne($sql);
+	$aid = $row['aid'];
+	$sql = "select * from mg_student where aid =".$aid;
+	$sql = "select mg_student.uid, mg_student.points, mg_user.name, mg_user.avatar from mg_student left join mg_user on mg_student.uid = mg_user.uid";
 	$rows = fetchAll($sql);
 	return $rows;
 }
 
-function updateClassData($aid){
-	
-	$arr['page'] = $_POST['currentPage'];
-	$where = 'aid ='.$aid;
-	update('mg_class',$arr,$where);
 
-}
 
 function fetchClassData($uid){
 
@@ -20,8 +27,18 @@ function fetchClassData($uid){
 	$row = fetchOne($sql);
 	$aid = $row['aid'];
 	$sql = "select * from mg_class where aid = ".$aid;
-	$row = fetchOne($sql);
-	return $row;
+	$rows['classData'] = fetchOne($sql);
+	$rows['students'] = getClassStudents($uid);
+	return $rows;
+}
+
+function updateClassData($aid){
+	
+	$arr['page'] = $_POST['currentPage'];
+	$arr['mode'] = $_POST['mode'];
+	$where = 'aid ='.$aid;
+	update('mg_class',$arr,$where);
+
 }
 
 function joinClass($uid, $aid, $cid){
@@ -36,6 +53,11 @@ function joinClass($uid, $aid, $cid){
 	insert("mg_student",$arr);
 	$msg="正在进入课堂...<meta http-equiv='refresh' content='2;url=student.php?cid=".$cid."'/>";
 	return $msg;
+}
+
+function leaveClass($uid){
+	$where = 'uid ='.$uid;
+	delete('mg_student',$where);
 }
 
 function closeClass($uid){

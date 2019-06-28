@@ -3,14 +3,17 @@
   <div class="card-body" style="padding-top: 10px; padding-bottom: 10px; padding-left: 10px;">
       
       <div>
-        
-        <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="学生ppt被老师操控，无法自主翻页">
-            同步模式
-        </button>
-        <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="学生可自由浏览所有页面">
-            自由模式
-        </button>
-        <a type="button" href="doAction.php?act=closeClass" class="btn btn-success float-right" data-toggle="tooltip" data-placement="top" title="点击下课后，结束本次课程">
+
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active " onclick="changeMode(1)" data-toggle="tooltip" data-placement="top" title="学生ppt被老师操控，无法自主翻页">
+            <input  type="radio" name="options" id="option1" autocomplete="off" checked> 同步模式
+          </label>
+          <label class="btn btn-secondary" onclick="changeMode(2)" data-toggle="tooltip" data-placement="top" title="学生可自由浏览所有页面">
+            <input  type="radio" name="options" id="option3" autocomplete="off" > 自由模式
+          </label>
+        </div>
+
+        <a type="button" id="closeClassBtn" href="doAction.php?act=closeClass" class="btn btn-success float-right" data-toggle="tooltip" data-placement="top" title="点击下课后，结束本次课程">
             下课
         </a> 
 

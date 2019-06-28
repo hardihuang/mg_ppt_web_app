@@ -38,3 +38,9 @@
 .navbar{
 	border-bottom: 1px solid #c6c9cc;
 }
+
+
+.course-summary{
+	height: 20px;
+	overflow: hidden;
+}

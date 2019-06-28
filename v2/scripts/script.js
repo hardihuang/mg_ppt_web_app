@@ -5,3 +5,4 @@ $(function () {
 function stopVideo(){
 	$('#videoElement').get(0).pause();
 }
+

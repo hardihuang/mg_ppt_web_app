@@ -3,8 +3,6 @@ $pageTitle="课程列表";
 require_once 'includes/header.php';
 $rows = getAllCourses();
 $user = getUserByUid($uid);
-$classes = getCurrentClass();
-
 echo('<div class="container" >');
 echo('<div class="row">
     <div class="col-8">');
@@ -25,7 +23,7 @@ echo('<div class="row">
 			echo('
 					<div class="card-body">
 			    		<h5 class="card-title">'.$row['name'].'</h5>
-			    		<p class="card-text">'.$row['summary'].'</p>
+			    		<p class="card-text course-summary">'.$row['summary'].'</p>
 			    		'.$btn1.'
 			  		</div>
 		  		</div>
@@ -38,15 +36,7 @@ echo('<div class="row">
 				  <div class="card-header">
 				    当前课堂：
 				  </div>
-				  <ul class="list-group list-group-flush">');
-				foreach ($classes as $class) {
-					if($user['isAdmin'] == 1){
-						$button = '';
-					}else{
-						$button = '<a class="btn btn-primary btn-sm float-right" href="doAction.php?act=joinClass&aid='.$class['aid'].'&uid='.$uid.'&cid='.$class['cid'].'">去上课</a> ';
-					}
-					echo('<li class="list-group-item">'.$class['course_name'].' - '.$class['admin_name'].$button.'</li>');
-				}
+				  <ul id="currentClasses" class="list-group list-group-flush">');
 				    
 				  echo('</ul>
 				</div>');
@@ -74,6 +64,7 @@ if($user['isAdmin'] == 1){
 ?>
 
 
+<script src="scripts/courseList.js" type="text/javascript"></script>
 <?php 
 require_once 'includes/footer.php';
  ?>

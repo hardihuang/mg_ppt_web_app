@@ -1,6 +1,8 @@
 <?php 
 $pageTitle="学生端-PPT页面";
 require_once 'includes/header.php';
+$students = getClassStudents($uid);
+//print_r($students);
 ?>
 
 <div class="container-fluid">

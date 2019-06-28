@@ -27,8 +27,8 @@ if($act==='signup'){
 	$msg=fetchClassData($uid);
 }elseif($act==='closeClass'){
 	$msg=closeClass($uid);
-}elseif($act==='markAllRead'){
-	$msg=markAllRead();
+}elseif($act==='leaveClass'){
+	$msg=leaveClass($uid);
 }
 
 

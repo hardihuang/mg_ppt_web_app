@@ -34,6 +34,7 @@ $version = getCurrentVersion()['version'];
       <span class="badge badge-warning mr-3">Beta</span>
       <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0 font-weight-bolder">
+          <!--
           <li class="nav-item ">
             <a class="nav-link" href="#">启蒙</a>
           </li>
@@ -43,6 +44,7 @@ $version = getCurrentVersion()['version'];
           <li class="nav-item">
             <a class="nav-link" href="#">创想</a>
           </li>
+          -->
         </ul>
         
         <span class="mr-1">
