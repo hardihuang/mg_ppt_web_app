@@ -69,3 +69,5 @@ CREATE TABLE `mg_student` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 select mg_class.aid, mg_class.cid, mg_user.name as admin_name, mg_course.name as course_name from mg_class left join mg_user on mg_class.aid=mg_user.uid left join mg_course on mg_class.cid=mg_course.cid;
+
+select mg_class.aid,mg_student.uid, mg_student.points, mg_user.name, mg_user.avatar from mg_student left join mg_user on mg_student.uid = mg_user.uid left join mg_class on mg_student.aid = mg_class.aid where mg_class.aid = 1;

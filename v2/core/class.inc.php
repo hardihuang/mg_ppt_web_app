@@ -13,8 +13,8 @@ function getClassStudents($uid){
 	$sql = "select aid from mg_student where uid=".$uid;
 	$row = fetchOne($sql);
 	$aid = $row['aid'];
-	$sql = "select * from mg_student where aid =".$aid;
-	$sql = "select mg_student.uid, mg_student.points, mg_user.name, mg_user.avatar from mg_student left join mg_user on mg_student.uid = mg_user.uid";
+	//$sql = "select * from mg_student where aid =".$aid;
+	$sql = "select mg_class.aid,mg_student.uid, mg_student.points, mg_user.name, mg_user.avatar from mg_student left join mg_user on mg_student.uid = mg_user.uid left join mg_class on mg_student.aid = mg_class.aid where mg_class.aid =".$aid;
 	$rows = fetchAll($sql);
 	return $rows;
 }
